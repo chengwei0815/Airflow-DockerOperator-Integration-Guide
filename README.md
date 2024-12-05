@@ -1,4 +1,4 @@
-# Airflow-DockerOperator-Integration-Guide
+
 
 Here's an outline for the **DockerOperator Adoption Documentation** to guide your team in implementing containerized tasks in Airflow.  
 
