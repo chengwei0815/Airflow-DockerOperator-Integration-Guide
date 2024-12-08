@@ -1,0 +1,26 @@
+cd ~
+
+ls -al
+
+cd .aws
+
+ls -al     (to find credentials)
+
+aws --version     (aws-cli/2.17.65 Python/3.12.7)
+
+cd ~
+
+rm -rf .aws
+
+aws configure
+
+AWS Access Key ID [None]:  (find from ~/.aws/credentials)
+
+AWS Secret Access Key [None]:   (find from ~/.aws/credentials)
+
+ssh -i /Users/weicheng/.ssh/id_rsa wei@3.16.55.182
+
+cd /home/ubuntu/airflow/dags/job_recommender_project_echo
+
+Configuration and credential file settings in the AWS CLI:  https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html
+
