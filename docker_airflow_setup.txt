@@ -1,0 +1,20 @@
+step1: build image
+jt-demo-docker-python-project % docker build . --tag demo-docker-operator-image:v1.0
+or
+jt-demo-docker-python-project % ./build_docker_image.sh
+
+step2: login AWS, tag and push image
+jt-demo-docker-python-project % aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ************.dkr.ecr.us-east-1.amazonaws.com
+  (aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin ************.dkr.ecr.us-east-2.amazonaws.com)
+=> Login Succeeded
+or
+go to Docker dashboard => images => copy imageID => paste after 'docker tag' in ecr.sh file
+jt-demo-docker-python-project % ./ecr.sh     (login, tag, push)
+
+step3:
+jt-airflow-docker-setup % ./build_docker_image.sh
+  or
+jt-airflow-docker-setup % docker build . --tag extended_airflow:latest
+
+step4:
+jt-airflow-docker-setup % docker-compose up      
